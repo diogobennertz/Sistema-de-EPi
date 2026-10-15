@@ -1,3 +1,3 @@
 package com.empresa.epi.model;
 
-public enum Perfil { ADMIN, ALMOXARIFE }
+public enum Perfil { ADMIN, GESTOR, CONSULTA }

@@ -24,6 +24,7 @@ public class Colaborador {
 
     private String cargo;
     private String setor;
+    private String telefone;
     private LocalDate dataAdmissao;
     private boolean ativo = true;
 }

@@ -15,24 +15,39 @@ public class Epi {
     @Column(name = "id_epi")
     private Long id;
 
+    @NotBlank @Column(nullable = false, unique = true, length = 30)
+    private String codigo;
+
     @NotBlank @Column(nullable = false)
     private String nome;
 
-    private String descricao;
+    @NotBlank @Column(nullable = false)
+    private String categoria;
+
+    @NotBlank @Column(nullable = false)
+    private String fabricante;
 
     @NotBlank @Column(nullable = false, length = 20)
     private String numeroCa;
 
+    @NotNull
     private LocalDate validadeCa;
-    private String tamanho;
+
+    // Validade física do equipamento (opcional)
+    private LocalDate validadeFisica;
 
     @Min(0) @Column(nullable = false)
+    private int estoqueMinimo;
+
+    // Só muda por entrada, ajuste, entrega e devolução (nunca pelo cadastro)
+    @Column(nullable = false)
     private int quantidadeEstoque;
 
-    private boolean ativo = true;
+    // true = reutilizável (gera devolução); false = consumível
+    private boolean reutilizavel = true;
 
-    @NotNull
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id_categoria")
-    private CategoriaEpi categoria;
+    @Column(length = 1000)
+    private String descricao;
+
+    private boolean ativo = true;
 }

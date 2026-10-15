@@ -2,9 +2,11 @@ package com.empresa.epi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "usuario")
@@ -17,10 +19,10 @@ public class Usuario {
     @NotBlank @Column(nullable = false)
     private String nome;
 
-    @NotBlank @Column(nullable = false, unique = true, length = 50)
-    private String login;
+    @NotBlank @Email @Column(nullable = false, unique = true, length = 150)
+    private String email;
 
-    // Nunca devolvida nas respostas da API; guardada sempre com hash BCrypt
+    // Nunca devolvida pela API; guardada sempre com hash BCrypt
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false)
     private String senha;
@@ -29,4 +31,11 @@ public class Usuario {
     private Perfil perfil;
 
     private boolean ativo = true;
+
+    private LocalDate dataCadastro;
+
+    @PrePersist
+    void antesDeSalvar() {
+        if (dataCadastro == null) dataCadastro = LocalDate.now();
+    }
 }

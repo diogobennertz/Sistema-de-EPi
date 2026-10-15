@@ -3,20 +3,19 @@ package com.empresa.epi.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
-import java.time.LocalDate;
 
 @Entity
-@Table(name = "item_emprestimo")
+@Table(name = "item_entrega")
 @Getter @Setter @NoArgsConstructor
-public class ItemEmprestimo {
+public class ItemEntrega {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_item")
+    @Column(name = "id_item_entrega")
     private Long id;
 
     @JsonBackReference
     @ManyToOne(optional = false)
-    @JoinColumn(name = "id_emprestimo")
-    private Emprestimo emprestimo;
+    @JoinColumn(name = "id_entrega")
+    private Entrega entrega;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_epi")
@@ -25,9 +24,9 @@ public class ItemEmprestimo {
     @Column(nullable = false)
     private int quantidade;
 
-    private LocalDate dataPrevistaDevolucao;
-    private LocalDate dataDevolucao;
+    @Column(nullable = false)
+    private int quantidadeDevolvida = 0;
 
-    @Enumerated(EnumType.STRING) @Column(nullable = false)
-    private StatusItem status = StatusItem.PENDENTE;
+    // Condição da última devolução: Bom, Danificado ou Descartado
+    private String condicao;
 }

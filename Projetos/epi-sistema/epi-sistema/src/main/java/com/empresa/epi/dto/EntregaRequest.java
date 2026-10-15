@@ -7,13 +7,12 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;
 
-public record EmprestimoRequest(
+public record EntregaRequest(
         @NotNull Long idColaborador,
+        LocalDate dataEntrega,
+        LocalDate dataPrevistaDevolucao,
         String observacao,
-        @NotEmpty @Valid List<ItemRequest> itens) {
+        @NotEmpty @Valid List<ItemReq> itens) {
 
-    public record ItemRequest(
-            @NotNull Long idEpi,
-            @Min(1) int quantidade,
-            LocalDate dataPrevistaDevolucao) {}
+    public record ItemReq(@NotNull Long idEpi, @Min(1) int quantidade) {}
 }

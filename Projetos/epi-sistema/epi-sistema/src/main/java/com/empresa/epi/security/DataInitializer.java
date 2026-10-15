@@ -18,11 +18,11 @@ public class DataInitializer {
             if (repo.count() == 0) {
                 Usuario admin = new Usuario();
                 admin.setNome("Administrador");
-                admin.setLogin("admin");
+                admin.setEmail("admin@epi.local");
                 admin.setSenha(encoder.encode("admin123"));
                 admin.setPerfil(Perfil.ADMIN);
                 repo.save(admin);
-                System.out.println(">>> Usuário inicial criado: admin / admin123");
+                System.out.println(">>> Usuário inicial criado: admin@epi.local / admin123");
             }
         };
     }
