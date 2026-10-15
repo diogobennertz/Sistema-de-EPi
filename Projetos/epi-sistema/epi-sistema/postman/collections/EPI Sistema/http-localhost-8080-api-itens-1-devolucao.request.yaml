@@ -1,0 +1,14 @@
+$kind: http-request
+name: http://localhost:8080/api/itens/1/devolucao
+description: ""
+url: http://localhost:8080/api/itens/1/devolucao
+method: PUT
+body:
+  type: json
+  content: ""
+auth:
+  type: basic
+  credentials:
+    username: admin
+    password: admin123
+order: 8000

@@ -1,0 +1,11 @@
+$kind: http-request
+name: http://localhost:8080/api/colaboradores/1/epis-em-uso
+description: ""
+url: http://localhost:8080/api/colaboradores/1/epis-em-uso
+method: GET
+auth:
+  type: basic
+  credentials:
+    username: admin
+    password: admin123
+order: 7000

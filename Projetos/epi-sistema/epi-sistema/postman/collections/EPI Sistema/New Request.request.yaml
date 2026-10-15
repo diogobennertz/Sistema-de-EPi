@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:8080/api/categorias
+method: POST
+body:
+  type: json
+  content: '{ "nome": "Proteção da cabeça" }'
+order: 1000

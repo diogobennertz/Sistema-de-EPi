@@ -1,0 +1,26 @@
+$kind: http-request
+name: http://localhost:8080/api/emprestimos
+description: ""
+url: http://localhost:8080/api/emprestimos
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"idColaborador\": 1,\r
+
+    \  \"observacao\": \"Entrega inicial\",\r
+
+    \  \"itens\": [\r
+
+    \    { \"idEpi\": 1, \"quantidade\": 2, \"dataPrevistaDevolucao\": \"2026-12-01\" }\r
+
+    \  ]\r
+
+    }"
+auth:
+  type: basic
+  credentials:
+    username: admin
+    password: admin123
+order: 4000

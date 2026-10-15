@@ -1,0 +1,11 @@
+$kind: http-request
+name: http://localhost:8080/api/itens/pendentes
+description: ""
+url: http://localhost:8080/api/itens/pendentes
+method: GET
+auth:
+  type: basic
+  credentials:
+    username: admin
+    password: admin123
+order: 6000

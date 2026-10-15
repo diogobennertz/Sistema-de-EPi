@@ -1,0 +1,28 @@
+$kind: http-request
+name: http://localhost:8080/api/colaboradores
+description: ""
+url: http://localhost:8080/api/colaboradores
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"nome\": \"João da Silva\",\r
+
+    \  \"cpf\": \"123.456.789-00\",\r
+
+    \  \"matricula\": \"1001\",\r
+
+    \  \"cargo\": \"Pedreiro\",\r
+
+    \  \"setor\": \"Obra A\",\r
+
+    \  \"dataAdmissao\": \"2024-03-10\"\r
+
+    }"
+auth:
+  type: basic
+  credentials:
+    username: admin
+    password: admin123
+order: 3000

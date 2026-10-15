@@ -1,0 +1,25 @@
+$kind: http-request
+name: http://localhost:8080/api/epis
+description: ""
+url: http://localhost:8080/api/epis
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"nome\": \"Capacete de segurança\",\r
+
+    \  \"descricao\": \"Capacete classe B\",\r
+
+    \  \"numeroCa\": \"12345\",\r
+
+    \  \"validadeCa\": \"2027-12-31\",\r
+
+    \  \"tamanho\": \"Único\",\r
+
+    \  \"quantidadeEstoque\": 20,\r
+
+    \  \"categoria\": { \"id\": 1 }\r
+
+    }"
+order: 2000
