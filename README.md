@@ -1,153 +1,22 @@
 # Sistema de EPi
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPI Control - Documentação</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<img width="1241" height="1754" alt="01_regras_de_negocio-3" src="https://github.com/user-attachments/assets/c59ae53a-99ef-4aa5-a642-25188c1665be" />
+<img width="1241" height="1754" alt="01_regras_de_negocio-2" src="https://github.com/user-attachments/assets/1a5d3eb1-686b-4f3e-85d1-0466c219539d" />
+<img width="1241" height="1754" alt="01_regras_de_negocio-1" src="https://github.com/user-attachments/assets/618a8ff6-adf0-4253-af95-e82aade14b92" />
+<img width="1241" height="1754" alt="06_diagrama_funcionamento_do_sistema-4" src="https://github.com/user-attachments/assets/0524b137-fb1f-4312-b4f2-16f5117442a1" />
+<img width="1241" height="1754" alt="06_diagrama_funcionamento_do_sistema-3" src="https://github.com/user-attachments/assets/c1a7880c-a4b4-4ac1-9742-c49d7ecf3343" />
+<img width="1241" height="1754" alt="06_diagrama_funcionamento_do_sistema-2" src="https://github.com/user-attachments/assets/04a9c3ac-1872-4f8e-ade4-46747011affe" />
+<img width="1241" height="1754" alt="06_diagrama_funcionamento_do_sistema-1" src="https://github.com/user-attachments/assets/219f673e-21b0-469c-8b9e-f359a15f5375" />
+<img width="1754" height="1241" alt="05_diagrama_de_classes-3" src="https://github.com/user-attachments/assets/7042dadb-3fcf-4d72-b400-73a27c2b8b9d" />
+<img width="1754" height="1241" alt="05_diagrama_de_classes-2" src="https://github.com/user-attachments/assets/614559df-0cc0-46c7-9f5f-f113d5cbd216" />
+<img width="1754" height="1241" alt="05_diagrama_de_classes-1" src="https://github.com/user-attachments/assets/29824009-497e-4cf3-a24b-7dc271f18e8a" />
+<img width="1241" height="1754" alt="04_diagrama_de_casos_de_uso-2" src="https://github.com/user-attachments/assets/4181dae0-cd61-41cb-a396-73d731996b95" />
+<img width="1241" height="1754" alt="04_diagrama_de_casos_de_uso-1" src="https://github.com/user-attachments/assets/4757cba2-e869-452c-b290-df7f38895170" />
+<img width="1241" height="1754" alt="03_requisitos_nao_funcionais-2" src="https://github.com/user-attachments/assets/59a9b8a0-cf7f-4b4f-97ce-60408e54c8f8" />
+<img width="1241" height="1754" alt="03_requisitos_nao_funcionais-1" src="https://github.com/user-attachments/assets/0b9dfb80-d311-485f-94ff-5e5dfcb37974" />
+<img width="1241" height="1754" alt="02_requisitos_funcionais-3" src="https://github.com/user-attachments/assets/aba66cef-d423-49c8-bf7b-541aa17e085d" />
+<img width="1241" height="1754" alt="02_requisitos_funcionais-2" src="https://github.com/user-attachments/assets/b18a2807-117a-4d46-8ffd-d76101e68999" />
+<img width="1241" height="1754" alt="02_requisitos_funcionais-1" src="https://github.com/user-attachments/assets/69e35439-f2c3-404b-92a0-a13b2e579209" />
 
-        body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
 
-        /* Menu Lateral */
-        .sidebar {
-            width: 340px;
-            background-color: #161b22;
-            border-right: 1px solid #30363d;
-            padding: 24px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
 
-        .sidebar h1 {
-            font-size: 1.4rem;
-            color: #f0f6fc;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #30363d;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .pdf-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            overflow-y: auto;
-        }
-
-        .pdf-item a {
-            display: block;
-            color: #58a6ff;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 6px;
-            background-color: #21262d;
-            border: 1px solid #30363d;
-            font-size: 0.85rem;
-            font-family: monospace;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .pdf-item a:hover, .pdf-item.active a {
-            background-color: #30363d;
-            color: #79c0ff;
-            border-color: #8b949e;
-        }
-
-        /* Área de Conteúdo */
-        .viewer-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            background-color: #0d1117;
-        }
-
-        .viewer-header {
-            padding: 18px 24px;
-            background-color: #161b22;
-            border-bottom: 1px solid #30363d;
-        }
-
-        .viewer-header h2 {
-            font-size: 1.1rem;
-            color: #8b949e;
-        }
-
-        .embed-wrapper {
-            flex: 1;
-            padding: 20px;
-            background-color: #0d1117;
-        }
-
-        embed {
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-            background-color: #1f242c;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Menu Lateral com a sua lista real de arquivos -->
-    <div class="sidebar">
-        <h1>Sistema de EPi</h1>
-        <ul class="pdf-list">
-            <li class="pdf-item active"><a href="01_regras_de_negocio.pdf" target="pdf_viewer">01_regras_de_negocio.pdf</a></li>
-            <li class="pdf-item"><a href="02_requisitos_funcionais.pdf" target="pdf_viewer">02_requisitos_funcionais.pdf</a></li>
-            <li class="pdf-item"><a href="03_requisitos_nao_funcionais.pdf" target="pdf_viewer">03_requisitos_nao_funcionais.pdf</a></li>
-            <li class="pdf-item"><a href="04_diagrama_de_casos_de_uso.pdf" target="pdf_viewer">04_diagrama_de_casos_de_uso.pdf</a></li>
-            <li class="pdf-item"><a href="05_diagrama_de_classes.pdf" target="pdf_viewer">05_diagrama_de_classes.pdf</a></li>
-            <li class="pdf-item"><a href="06_diagrama_funcionamento_do_sistema.pdf" target="pdf_viewer">06_diagrama_funcionamento_do_sistema.pdf</a></li>
-        </ul>
-    </div>
-
-    <!-- Painel de Visualização das Imagens/PDFs -->
-    <div class="viewer-container">
-        <div class="viewer-header">
-            <h2 id="doc-title">01_regras_de_negocio.pdf</h2>
-        </div>
-        <div class="embed-wrapper">
-            <!-- Renderiza o primeiro arquivo imediatamente na tela -->
-            <embed src="01_regras_de_negocio.pdf" type="application/pdf" name="pdf_viewer" id="pdf-embed" />
-        </div>
-    </div>
-
-    <script>
-        const items = document.querySelectorAll('.pdf-item');
-        const docTitle = document.getElementById('doc-title');
-
-        items.forEach(item => {
-            const link = item.querySelector('a');
-            link.addEventListener('click', function() {
-                // Atualiza a classe ativa no menu lateral
-                items.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
-                
-                // Muda o cabeçalho dinamicamente
-                docTitle.textContent = this.textContent;
-            });
-        });
-    </script>
-</body>
-</html>
