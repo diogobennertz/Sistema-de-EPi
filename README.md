@@ -1,4 +1,4 @@
-# Sistema de EPi
+# Sistema de EPi - Feito Por Diogo Faqueti Bennertz, Patrick Leonardo Ruchinski e Eduardo Henrique Scheidt.
 
 <img width="1241" height="1754" alt="01_regras_de_negocio-1" src="https://github.com/user-attachments/assets/d209e34b-9897-498a-bf4b-eac86755d1ef" />
 <img width="1241" height="1754" alt="01_regras_de_negocio-2" src="https://github.com/user-attachments/assets/38bb7d16-9454-4ff7-ac8e-c27aaf3aaee7" />
